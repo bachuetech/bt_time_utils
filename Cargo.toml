@@ -1,0 +1,15 @@
+[package]
+name = "bt_time_utils"
+version = "0.1.0"
+edition = "2021"
+authors = ["calvarez <calvarez@bachuetech.biz>"]
+description = "Basic time formatting utility"
+keywords = ["time","formatting"]
+categories = ["value-formatting", "development-tools"]
+repository = "https://github.com/bachuetech/"
+readme = "README.md"
+homepage = "https://github.com/bachuetech/"
+license = "GPL-3.0-only"
+
+[dependencies]
+chrono = "0.4.39"
