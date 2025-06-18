@@ -18,3 +18,8 @@ pub fn get_formatted_time_and_date(time_format: &str, date_format: &str) -> (Str
 
     (time, date)
 }
+
+pub fn get_formatted_date(date_format: &str) -> String {
+    // Get the current local date and time
+    Local::now().format(&date_format).to_string()
+}

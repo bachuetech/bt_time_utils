@@ -17,6 +17,8 @@ let (c_time, c_date) = get_formatted_time_and_date("%H:%M","%B %d, %Y");
 ## Version History
 * 0.1.0
     * Initial Release
+* 0.1.1
+    * Added get formated date    
 
 ## License
 GPL-3.0-only
