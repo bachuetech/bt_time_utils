@@ -18,7 +18,9 @@ let (c_time, c_date) = get_formatted_time_and_date("%H:%M","%B %d, %Y");
 * 0.1.0
     * Initial Release
 * 0.1.1
-    * Added get formated date    
+    * Added get formated date
+* 0.1.2
+    * Added convert function to PrimitiveDateTime from Iso8601 &str, Format from PrimitiveDateTime UTC to String in Iana timezone, Format from UTC to to String date_time at UtcOffset      
 
 ## License
 GPL-3.0-only
