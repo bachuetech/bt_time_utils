@@ -18,17 +18,17 @@ pub fn get_formatted_time_and_date(time_format: &str, date_format: &str) -> (Str
     let now = Local::now();
 
     // Format the time as HH:mm
-    let time = now.format(&time_format).to_string();
+    let time = now.format(time_format).to_string();
 
     // Format the date as MMMM DD, YYYY
-    let date = now.format(&date_format).to_string();
+    let date = now.format(date_format).to_string();
 
     (time, date)
 }
 
 pub fn get_formatted_date(date_format: &str) -> String {
     // Get the current local date and time
-    Local::now().format(&date_format).to_string()
+    Local::now().format(date_format).to_string()
 }
 
 
