@@ -68,7 +68,8 @@ pub fn get_formatted_date(date_format: &str) -> String {
 /// ```rust
 /// # use time::PrimitiveDateTime;
 /// # use bt_time_utils::parse_local_to_utc;
-/// # fn main() -> Result<(), Box<dyn std::error::Error>> {
+/// # use bt_any_error::any_err::AnyErr;
+/// # fn main() -> Result<(), AnyErr> {
 /// let utc = parse_local_to_utc("2026-04-18T13:41", "America/New_York")?;
 ///
 /// println!("{utc}");
@@ -91,7 +92,7 @@ pub fn get_formatted_date(date_format: &str) -> String {
 pub fn parse_local_to_utc(
     datetime_str: &str,
     tz_name: &str,
-) -> Result<PrimitiveDateTime, Box<dyn std::error::Error>> {
+) -> Result<PrimitiveDateTime, AnyErr> {
     // Parse naive datetime (no timezone)
     let naive = PrimitiveDateTime::parse(datetime_str, &Iso8601::PARSING)?;
 
@@ -152,8 +153,8 @@ pub fn format_in_iana_timezone_or_utc(
 }
 
 const DATETIME_STRING_FORMAT_T: &[time::format_description::FormatItem<'static>] = format_description!("[year]-[month]-[day]T[hour]:[minute]:[second].[subsecond digits:1+]");
-const DATETIME_STRING_FORMAT: &[time::format_description::FormatItem<'static>] = format_description!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond digits:1+]");
-///Convert to PrimiteDateTime a String with formats (notice the T between day and hour):
+const DATETIME_STRING_FORMAT:   &[time::format_description::FormatItem<'static>] = format_description!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond digits:1+]");
+///Convert a str timestamp to PrimiteDateTime a String with formats (notice the T between day and hour):
 /// [year]-[month]-[day] [hour]:[minute]:[second].[subsecond digits:1+]
 /// or
 /// [year]-[month]-[day]T[hour]:[minute]:[second].[subsecond digits:1+]
