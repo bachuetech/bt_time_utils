@@ -1,5 +1,6 @@
 //pub mod date_time; Not working!
 
+use bt_any_error::any_err::AnyErr;
 use bt_logger::get_error;
 use chrono::Local;
 use time::macros::format_description;
@@ -148,4 +149,19 @@ pub fn format_in_iana_timezone_or_utc(
     );
 
     local_dt.format(&format).unwrap()
+}
+
+const DATETIME_STRING_FORMAT_T: &[time::format_description::FormatItem<'static>] = format_description!("[year]-[month]-[day]T[hour]:[minute]:[second].[subsecond digits:1+]");
+const DATETIME_STRING_FORMAT: &[time::format_description::FormatItem<'static>] = format_description!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond digits:1+]");
+///Convert to PrimiteDateTime a String with formats (notice the T between day and hour):
+/// [year]-[month]-[day] [hour]:[minute]:[second].[subsecond digits:1+]
+/// or
+/// [year]-[month]-[day]T[hour]:[minute]:[second].[subsecond digits:1+]
+pub fn convert_string_ts_to_primitivedatetime(ts_txt: &str) -> Result<PrimitiveDateTime, AnyErr>{
+    match PrimitiveDateTime::parse(ts_txt.trim(), &DATETIME_STRING_FORMAT){
+        Ok(pdt) => Ok(pdt),
+        Err(_) => {
+            Ok(PrimitiveDateTime::parse(ts_txt.trim(), &DATETIME_STRING_FORMAT_T)?)
+        },
+    }
 }

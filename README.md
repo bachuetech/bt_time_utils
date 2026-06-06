@@ -23,6 +23,8 @@ let (c_time, c_date) = get_formatted_time_and_date("%H:%M","%B %d, %Y");
     * Added convert function to PrimitiveDateTime from Iso8601 &str, Format from PrimitiveDateTime UTC to String in Iana timezone, Format from UTC to to String date_time at UtcOffset 
 * 0.1.3
     * Minor changes from clippy. Update dependencies.   
+* 0.1.4
+    * Update dependencies. add function convert_string_ts_to_primitivedatetime    
 
 ## License
 GPL-3.0-only
