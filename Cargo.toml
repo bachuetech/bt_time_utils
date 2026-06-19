@@ -1,6 +1,6 @@
 [package]
 name = "bt_time_utils"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 authors = ["calvarez <calvarez@bachuetech.biz>"]
 description = "Basic time formatting utility"
@@ -13,10 +13,10 @@ license = "GPL-3.0-only"
 
 [dependencies]
 bt_any_error = "0.1.0"
-bt_logger = "0.5.0"
+bt_logger = "0.6.0"
 chrono = "0.4.45"
 chrono-tz = "0.10.4"
-time = {version = "0.3.47", features = ["macros", "formatting", "parsing"] }
+time = {version = "0.3.49", features = ["macros", "formatting", "parsing"] }
 time-tz = "2.0.0"
 
 [dev-dependencies]
