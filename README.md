@@ -28,7 +28,9 @@ let (c_time, c_date) = get_formatted_time_and_date("%H:%M","%B %d, %Y");
 * 0.2.0
     * Migrate to AnyErr. Replace Box<dyn Error> for bt_any_error::any_err::AnyErr
 * 0.2.1
-    * Update dependencies.    
+    * Update dependencies. 
+* 0.2.2
+    * Update dependencies.         
 
 ## License
 GPL-3.0-only
